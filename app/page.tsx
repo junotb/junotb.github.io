@@ -1,32 +1,29 @@
-"use client";
-
-import Image from "next/image";
+import Link from "next/link";
 
 const Home = () => {
-  const name = 'Juno';
-  const motto = 'Slow but steady';
-  
-  return (
-    <div className="px-8 py-16 w-full h-full flex justify-center">
-      <section className="mb-4 w-full min-w-[8rem] max-w-[48rem]">
-        <div className="flex sm:flex-col border-b-2 border-gray-500 pb-8 gap-4">
-          <Image
-            src="/images/profile.png"
-            alt={""}
-            width={0}
-            height={0}
-            className="w-36 h-36 sm:w-48 sm:h-48 rounded-full"
-          />
-          <div className="flex flex-col justify-center gap-2">
-            <h3 className="text-4xl">{name}</h3>
-            <h4>{motto}</h4>
-          </div>
-        </div>
-      </section>
-      <section>
-        <article>
+  const fromYear = 2016;
+  const toYear = new Date().getFullYear();
+  const skipYear = 1;
 
-        </article>
+  return (
+    <div className="px-6">
+      <section className="border-dashed border-b-2 border-[rgb(var(--foreground-rgb))] py-8">
+        <h3 className="px-2 py-4 font-bold text-xl">Articles</h3>
+        <ul>
+          <li className="border-t-2 border-[rgb(var(--foreground-rgb))] px-2 py-4">
+            <Link href={""} className="font-semibold text-sm">제목1</Link>
+          </li>
+          <li className="border-t-2 border-[rgb(var(--foreground-rgb))] px-2 py-4">
+            <Link href={""} className="font-semibold text-sm">제목2</Link>
+          </li>
+        </ul>
+      </section>
+      <section className="py-8 space-y-4">
+        <p className="text-xl text-center font-bold">안녕하세요!</p>
+        <p className="text-sm">
+          문화 & 교육 분야에서 일하고 있는 {toYear - fromYear - skipYear + 1}년차 개발자입니다.
+          시스템 개발/운영 업무를 담당하며 매년 500여건의 운영 건을 처리하고 있습니다.
+        </p>
       </section>
     </div>
   )

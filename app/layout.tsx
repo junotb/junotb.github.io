@@ -1,14 +1,15 @@
-import Sidebar from '@/components/Sidebar'
 import './globals.css'
 import type { Metadata } from 'next'
 import { Noto_Sans_KR } from 'next/font/google'
+import Topbar from '@/components/Topbar'
+import Bottombar from '@/components/Bottombar'
 
 const notoSansKr = Noto_Sans_KR({
   subsets: ['latin'],
   weight: ['100', '300', '400', '500', '700', '900'],
   display: 'swap',
   fallback: [
-    'sans-serif'
+    'helvetica', 'sans-serif'
   ],
 })
 
@@ -24,11 +25,12 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en" className="[color-scheme:dark]">
-      <body className={`flex flex-col-reverse sm:flex-row h-screen overflow-y-scroll ${notoSansKr.className}`}>
-        <Sidebar />
-        <main className='w-full h-full bg-neutral-900'>
+      <body className={`flex flex-col ${notoSansKr.className}`}>
+        <Topbar />
+        <main className='w-full h-full'>
           {children}
         </main>
+        <Bottombar />
       </body>
     </html>
   )
