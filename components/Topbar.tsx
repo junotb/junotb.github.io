@@ -8,32 +8,43 @@ const Topbar = () => {
 
   return (
     <header>
-      <div className="flex justify-between px-6 py-8 text-sm">
-        <Link
-          href="/"
-          className=""
-          onClick={() => setIsOpen(false)}
-        >
-          <h1 className="font-semibold">J&nbsp;u&nbsp;n&nbsp;o</h1>
+      <div className="flex justify-between px-6 py-4 text-sm">
+        <Link href="/">
+          <h1 className="font-bold">Juno</h1>
         </Link>
         <button
           type="button"
-          className="sm:hidden"
-          onClick={() => setIsOpen(!isOpen)}
+          onClick={() => setIsOpen(true)}
         >
-          {
-            (isOpen) ? (
+          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-6 h-6">
+            <path strokeLinecap="round" strokeLinejoin="round" d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5" />
+          </svg>
+        </button>
+      </div>
+      {
+        isOpen &&
+        <nav className="fixed inset-0 z-10 bg-[rgb(var(--background-rgb))]">
+          <div className="flex justify-between px-6 py-4 text-sm">
+            <h1>Menu</h1>
+            <button
+              type="button"
+              onClick={() => setIsOpen(false)}
+            >
               <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-6 h-6">
                 <path strokeLinecap="round" strokeLinejoin="round" d="M6 18L18 6M6 6l12 12" />
               </svg>
-            ) : (
-              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-6 h-6">
-                <path strokeLinecap="round" strokeLinejoin="round" d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5" />
-              </svg>
-            )
-          }
-        </button>
-      </div>
+            </button>
+          </div>
+          <ul className="px-6 py-4 space-y-4 text-xl">
+            <li>
+              <Link href="/about">About</Link>
+            </li>
+            <li>
+              <Link href="/articles">Articles</Link>
+            </li>
+          </ul>
+        </nav>
+      }
     </header>
   )
 };
