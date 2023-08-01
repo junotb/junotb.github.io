@@ -8,7 +8,7 @@ const Topbar = () => {
 
   return (
     <header>
-      <div className="flex justify-between px-6 py-4 text-sm">
+      <div className="flex justify-between px-6 py-4">
         <Link href="/">
           <h1 className="font-bold">Juno</h1>
         </Link>
@@ -36,12 +36,9 @@ const Topbar = () => {
             </button>
           </div>
           <ul className="px-6 py-4 space-y-4 text-xl">
-            <li>
-              <Link href="/about">About</Link>
-            </li>
-            <li>
-              <Link href="/articles">Articles</Link>
-            </li>
+            <li><Link href="/about">About</Link></li>
+            <li><Link href="/article">Articles</Link></li>
+            <li><Link href="/catalog">Catalogs</Link></li>
           </ul>
         </nav>
       }

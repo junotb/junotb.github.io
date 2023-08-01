@@ -25,7 +25,10 @@ const RootLayout = ({
 }) => {
   return (
     <html lang="en">
-      <body className={notoSansKr.className}>
+      <body
+        suppressHydrationWarning={true}
+        className={notoSansKr.className}
+      >
         <Topbar />
         <main>
           {children}
