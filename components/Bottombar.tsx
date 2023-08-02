@@ -4,10 +4,9 @@ const Bottombar = () => {
   return (
     <footer>
       <div className="px-6">
-        <div className="border-dashed border-t-2 border-[rgb(var(--foreground-rgb))] py-6">
+        <div className="border-t-2 border-[rgb(var(--foreground-rgb))] py-6">
           <div className="px-6">
-            <ul className="grid grid-cols-2 items-center gap-2 text-xl">
-              <li><Link href="/about">About</Link></li>
+            <ul className="items-center space-y-2 text-xl text-center">
               <li><Link href="/article">Articles</Link></li>
               <li><Link href="/catalog">Catalogs</Link></li>
             </ul>
